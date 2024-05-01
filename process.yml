@@ -1,0 +1,45 @@
+version: 2
+jobs:
+  test:
+    docker:
+    - image: cimg/node:20.12.1
+    steps:
+    - checkout
+    - run:
+        name: Removing Node Modules and Package Lock
+        command: rm -rf node_modules package-lock.json
+    - run:
+        name: Install npm
+        command: sudo npm cache clean --force && sudo npm install
+    - run:
+        name: Installing Appium
+        command: sudo npm install -g appium
+    - run:
+        name: Run tests
+        command: npx wdio ./config/saucelabs/wdio.android.emulator.saucelab.conf.js
+  build:
+    docker:
+    - image: cimg/base:current
+    steps:
+    - checkout
+    - run:
+        name: Build an artifact
+        command: touch example.txt
+  deploy:
+    docker:
+    - image: cimg/base:current
+    steps:
+    - run:
+        name: deploy
+        command: '#e.g. ./deploy.sh'
+workflows:
+  example:
+    jobs:
+    - test
+    - build:
+        requires:
+        - test
+    - deploy:
+        requires:
+        - test
+  version: 2

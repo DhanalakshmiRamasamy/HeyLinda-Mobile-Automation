@@ -1,0 +1,93 @@
+{
+  "start": "2024-05-01T19:52:08.899Z",
+  "end": "2024-05-01T19:52:41.974Z",
+  "capabilities": {
+    "platformName": "Android",
+    "deviceName": "RZ8M40P319W",
+    "app": "/Users/apple/Documents/HeyLinda-Mobile-Automation/apps/android.apk",
+    "automationName": "UiAutomator2",
+    "platform": "LINUX",
+    "webStorageEnabled": false,
+    "takesScreenshot": true,
+    "javascriptEnabled": true,
+    "databaseEnabled": false,
+    "networkConnectionEnabled": true,
+    "locationContextEnabled": false,
+    "warnings": {},
+    "desired": {
+      "platformName": "Android",
+      "deviceName": "samsung SM-A505F",
+      "app": "/Users/apple/Documents/HeyLinda-Mobile-Automation/apps/android.apk",
+      "automationName": "UiAutomator2"
+    },
+    "deviceUDID": "RZ8M40P319W",
+    "appPackage": "com.meditation.heylinda",
+    "pixelRatio": "2.625",
+    "statBarHeight": 83,
+    "viewportRect": {
+      "left": 0,
+      "top": 83,
+      "width": 1080,
+      "height": 2257
+    },
+    "deviceApiLevel": 30,
+    "platformVersion": "11",
+    "deviceManufacturer": "samsung",
+    "deviceModel": "SM-A505F",
+    "deviceScreenSize": "1080x2340",
+    "deviceScreenDensity": 420,
+    "sessionId": "3d69c003-3229-42cd-895b-1d3e5039adc3"
+  },
+  "host": "127.0.0.1",
+  "port": 4723,
+  "baseUrl": "http://localhost",
+  "framework": "mocha",
+  "mochaOpts": {
+    "timeout": 60000,
+    "ui": "bdd"
+  },
+  "duration": 33075,
+  "suites": [
+    {
+      "title": "Meditation Scenarios",
+      "duration": 32511,
+      "start": "2024-05-01T19:52:08.904Z",
+      "end": "2024-05-01T19:52:41.415Z",
+      "tests": [
+        {
+          "title": "Clicking on a Meditation Tile and Perform Meditation",
+          "start": "2024-05-01T19:52:08.904Z",
+          "end": "2024-05-01T19:52:14.413Z",
+          "duration": 5509,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Adding Meditated Minutes for the past 3 days and validating Streak for Progress",
+          "start": "2024-05-01T19:52:14.416Z",
+          "end": "2024-05-01T19:52:30.944Z",
+          "duration": 16528,
+          "state": "passed",
+          "screenshots": []
+        },
+        {
+          "title": "Adding Meditated Minutes to see if it is reflecting in Time Meditating",
+          "start": "2024-05-01T19:52:30.944Z",
+          "end": "2024-05-01T19:52:41.415Z",
+          "duration": 10471,
+          "state": "passed",
+          "screenshots": []
+        }
+      ],
+      "hooks": []
+    }
+  ],
+  "specs": [
+    "file:///Users/apple/Documents/HeyLinda-Mobile-Automation/test/e2e/meditate.android.test.js"
+  ],
+  "state": {
+    "passed": 3,
+    "failed": 0,
+    "skipped": 0
+  }
+}
