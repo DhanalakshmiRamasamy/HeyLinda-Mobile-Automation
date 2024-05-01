@@ -1,0 +1,49 @@
+# CircleCI Configuration File
+#
+# Using latest CircleCI Version 2.1
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node:20.12.1
+    steps:
+      - checkout
+      - run:
+          name: Removing Node Modules and Package Lock
+          command: rm -rf node_modules package-lock.json
+      - run:
+          name: Install npm
+          command: sudo npm cache clean --force && sudo npm install
+      - run:
+          name: Installing Appium
+          command: sudo npm install -g appium
+      - run:
+          name: Run tests
+          command: npm run sauceLabAndroid
+  # As of now I am not building and deploying as I do not have an environment to deploy, but just keeping the provision for future integration
+  build:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      - run:
+          name: Build an artifact
+          command: touch example.txt
+  deploy:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - run:
+          name: deploy
+          command: "#e.g. ./deploy.sh"
+workflows:
+  example:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+      - deploy:
+          requires:
+            - test
